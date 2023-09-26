@@ -5,17 +5,25 @@ import dev.diss.shelfish.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Autowired
     private BookRepository bookRepository;
 
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
     @Override
-    public Shelf getAllBooks() {
-        return bookRepository.findAll();
+    public Set<Book> getAllBooks() {
+        Set<Book> books = new HashSet<>();
+        for (Book book : bookRepository.findAll()) {
+            books.add(book);
+        }
+        return books;
     }
 
     @Override
