@@ -20,11 +20,14 @@ public class GenreController {
         this.genreRepository = genreRepository;
     }
 
+    // List all available genres in DB
     @GetMapping("/")
     public List<Genre> getGenres() {
         return genreRepository.findAll();
     }
 
+
+    // TODO: Cache genres as they are hit, decay after {time}
     @GetMapping("/{genreId}")
     public List<Book> getBooksByGenre(@PathVariable Long genreId) {
         return null;

@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS bookshelf;
-CREATE DATABASE bookshelf;
 
 -- Create the Author table
 CREATE TABLE IF NOT EXISTS authors (
@@ -34,7 +32,9 @@ CREATE TABLE IF NOT EXISTS shelves (
 -- Create the reader table
 CREATE TABLE IF NOT EXISTS readers (
   reader_id serial PRIMARY KEY,
-  reader_name VARCHAR(255) NOT NULL,
+  reader_username VARCHAR(255) NOT NULL,
+  firstName VARCHAR(50) NOT NULL,
+  lastName VARCHAR(50) NOT NULL,
   email VARCHAR(255) NOT NULL,
   birthdate DATE,
   join_date DATE
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS readers (
 CREATE TABLE IF NOT EXISTS reader_books (
   reader_id INT NOT NULL,
   book_id INT NOT NULL,
-  purchase_date DATE,
+  start_date DATE,
+  finish_date DATE,
   rating INT,
   PRIMARY KEY(reader_id, book_id),
   FOREIGN KEY (reader_id) REFERENCES readers (reader_id),

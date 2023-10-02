@@ -22,8 +22,14 @@ public class Reader {
     @Column(name = "reader_id")
     private Long id;
 
-    @Column(name = "reader_name")
-    private String name;
+    @Column(name = "reader_username")
+    private String username;
+
+    @Column(name = "firstName")
+    private String firstName;
+
+    @Column(name = "lastName")
+    private String lastName;
 
     @Column(name = "email")
     private String email;
@@ -41,4 +47,7 @@ public class Reader {
             inverseJoinColumns = @JoinColumn(name = "book_id")
     )
     private Set<Book> books;
+
+    @OneToOne
+    private Shelf shelf;
 }

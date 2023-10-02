@@ -33,4 +33,7 @@ public class Shelf {
             inverseJoinColumns = @JoinColumn(name = "book_id")
     )
     private Set<Book> books = new HashSet<>();
+
+    @OneToOne
+    private Reader reader;
 }
