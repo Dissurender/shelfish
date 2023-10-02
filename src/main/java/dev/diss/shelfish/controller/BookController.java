@@ -17,14 +17,11 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    public List<Book> searchBooks(@RequestParam(name = "title", required = false) String title,
-                                  @RequestParam(name = "author", required = false) String author) {
-        if (title != null && author != null) {
-            return bookService.searchTitleAndAuthor(title, author);
+    public List<Book> searchBooks(@RequestParam(name = "title", required = false) String title) {
+        if (title != null) {
+            return bookService.searchTitleAndAuthor(title, "");
         } else if (title != null) {
             return bookService.searchTitle(title);
-        } else if (author != null) {
-            return bookService.searchAuthor(author);
         }
         return null;
     }

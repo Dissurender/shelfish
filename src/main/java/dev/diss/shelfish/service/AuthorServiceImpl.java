@@ -73,12 +73,12 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Set<Book> getAllAuthorBooks(Author author) {
+    public Set<Book> getAllAuthorBooks(Long id) {
 
-        Author holdAuthor = authorRepository.findById(author.getId()).orElse(null);
+        Author author = authorRepository.findById(id).orElse(null);
         if (author == null) {return null;}
 
-        return holdAuthor.getBooks();
+        return author.getBooks();
     }
 
     @Override
