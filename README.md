@@ -4,6 +4,10 @@
 
 ---
 
+### TODO
+  - Verify SQL script, focus on reader_books
+  - 
+
 ## Description
 
 ## Table of Contents

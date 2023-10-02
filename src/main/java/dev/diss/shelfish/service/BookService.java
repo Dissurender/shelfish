@@ -21,5 +21,4 @@ public interface BookService {
 
     List<Book> searchTitle(String title);
 
-    List<Book> searchAuthor(String author);
 }

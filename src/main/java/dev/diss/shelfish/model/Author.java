@@ -35,4 +35,8 @@ public class Author {
     )
     private Set<Book> books = new HashSet<>();
 
+    // TODO: add find helper for books Set
+    public Book getBookById(Long bookId) {
+        return null;
+    }
 }
