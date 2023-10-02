@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/*
+ *
+ *  This controller is for testing only, all shelves should be retrieved
+ *  through the Reader who owns it
+ */
 @RestController
 @RequestMapping("/api/shelves")
 public class ShelfController {
