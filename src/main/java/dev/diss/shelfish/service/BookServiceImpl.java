@@ -2,7 +2,6 @@ package dev.diss.shelfish.service;
 
 import dev.diss.shelfish.model.Book;
 import dev.diss.shelfish.repository.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -61,8 +60,4 @@ public class BookServiceImpl implements BookService {
         return null;
     }
 
-    @Override
-    public List<Book> searchAuthor(String author) {
-        return null;
-    }
 }

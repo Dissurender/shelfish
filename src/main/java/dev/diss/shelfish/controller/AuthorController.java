@@ -4,6 +4,7 @@ import dev.diss.shelfish.model.Author;
 import dev.diss.shelfish.repository.AuthorRepository;
 import dev.diss.shelfish.service.AuthorService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,7 @@ public class AuthorController {
     }
 
     // TODO: Map POST request to params
-    @GetMapping("/new")
+    @PostMapping("/new")
     public Author createNewAuthor() {
 
         // validate params, then drop into service
@@ -33,7 +34,7 @@ public class AuthorController {
 
         // TODO: use setters to set data to Author object
 
-        authorRepository.save(newAuthor);
+        authorService.addAuthor(newAuthor);
 
         return newAuthor;
     }

@@ -22,8 +22,6 @@ public interface AuthorService {
 
     Book getOneAuthorBook(Long authorId, Long bookId);
 
-    Set<Book> getAllAuthorBooks(Author author);
-
     Set<Book> getAllAuthorBooks(Long id);
 
     List<Author> findAll();

@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS bookstore;
+CREATE DATABASE bookstore;
 
 -- Create the Author table
 CREATE TABLE IF NOT EXISTS authors (

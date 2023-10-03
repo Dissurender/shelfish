@@ -35,6 +35,6 @@ public class Book {
     @ManyToMany(mappedBy = "books")
     private Set<Shelf> shelves = new HashSet<>();
 
-    @ManyToMany(mappedBy = "readers")
+    @ManyToMany(mappedBy = "books")
     private Set<Shelf> reader = new HashSet<>();
 }
